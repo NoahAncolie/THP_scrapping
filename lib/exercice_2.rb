@@ -12,7 +12,7 @@ def get_townhall_email(townhall_url)
     return {name.to_sym => email.to_s}
 end
 
-def give_row_list(row)
+def give_col_list(row)
   result = Array.new()
   list_mairies = Nokogiri::HTML(URI.open("https://www.annuaire-des-mairies.com/val-d-oise.html"))
   62.times do |i|
@@ -28,10 +28,4 @@ end
 
 perform
 
-#list_mairies = Nokogiri::HTML(URI.open("https://www.annuaire-des-mairies.com/val-d-oise.html"))
-## list_mairies = Nokogiri::HTML(URI.open("https://www.annuaire-des-mairies.com/val-d-oise.html"))
-#print list_mairies.xpath("//td[2]/p/a[1]/@href").to_s
 
-
-#puts get_townhall_email("https://www.annuaire-des-mairies.com/95/avernes.html")
-#puts get_townhall_email("http://annuaire-des-mairies.com/67/aschbach.html")
